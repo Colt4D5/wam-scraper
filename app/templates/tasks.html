@@ -1,0 +1,38 @@
+<link rel="stylesheet" href="../assets/tasks.css">
+<script defer src="../assets/tasks.js"></script>
+
+{% for date in dates %}
+  <div class="date-header">
+    <h1>{{ date.date }}</h1>
+  </div>
+  <div class="flex">
+  {% for task in date.tasks %}
+    <article class="flex-item">
+      <div class="details">
+        <div class="summary">
+          <div class="summary-content">
+            <div class="checkbox-cont">
+                <div class="checkbox"></div>
+            </div>
+            <div class="title-div">
+              <span class="task-title">{{ task.title }}</span>
+              <p class="task-name">{{ task.name }}</p>
+            </div>
+            <div class="time-div">
+              <p>{{ task.time }}</p>
+            </div>
+          </div>
+          <div class="content">
+            <div class="content_inner">
+              <h3>Task Details:</h3>
+              {% for deets in task.details %}
+              <p style="margin-bottom: 1rem;">{{ deets }}</p>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+  {% endfor %}
+  </div>
+{% endfor %}

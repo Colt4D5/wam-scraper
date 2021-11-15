@@ -1,0 +1,8 @@
+{% include 'navbar.html' %}
+
+{% for date in dates %}
+  <h3>{{ date.date }}</h3>
+  {% for task in date.tasks %}
+    <p>{{ task }}</p>
+  {% endfor %}
+{% endfor %}
